@@ -1,0 +1,35 @@
+### 1. Change password
+PUT localhost:8080/api/v1/profile/changePassword
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxNzk4MTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjY2MjE4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.wCzY6mFOda7UI53OE830jcdS1fk9l3vqpOIg8bq65kzSgA6pyvhdCvVAEao28r4w3rOzHFkYmJmbrJca8cUjCw
+
+{
+  "email": "runnerpro1990@gmail.com",
+  "password": "12345"
+}
+### 2. Update Email (with email verification)
+PUT localhost:8080/api/v1/profile/updateEmail?email=runnerpro1990@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2MTEsImlkIjo0LCJlbWFpbCI6Im5peWF6b3Z4YXRhbWRqYW5AZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDExLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.56vqVVec2UKkR5e16oy2MwcufS0LvyXBeEFvxO-nPHyQ2-Bai1cdSaak95N5SndmeX3w7XKJnwfyo18P_hwtjg
+### 3. Update Profile Detail(name,surname)
+PUT localhost:8080/api/v1/profile/updateDetails?name=valish&surname=valiyev
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+### 4. Update Profile Attach (main_photo) (delete old attach)
+PUT localhost:8080/api/v1/profile/updatePhoto?photoId=a7ed352a-4210-4597-91ec-cc057f22126c
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+### 5. Get Profile Detail (id,name,surname,email,main_photo((url)))
+GET localhost:8080/api/v1/profile
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+
+###   6. Create Profile (ADMIN)
+POST localhost:8080/api/v1/profile/createProfile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+
+{
+  "name": "Teshmat",
+  "surname": "Toshmatov",
+  "email": "test@gmail.com",
+  "password": "12345",
+  "role": "ROLE_MODERATOR",
+  "attachId":"bfc15cb2-a05c-4950-bf2b-c63068256534"
+}

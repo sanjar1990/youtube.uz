@@ -1,0 +1,19 @@
+###1. Create Attach (upload)
+POST localhost:8080/api/v1/attach/public/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="20201216_162456.jpg"
+
+< C:\Users\sanja\OneDrive\Рабочий стол\20201216_162456.jpg
+
+### 2. Get Attach By Id (Open) image
+GET localhost:8080/api/v1/attach/public/582c6b16-45a3-443c-a282-d9d29088fb90/img
+### 2.  Get Attach By Id (Open) general
+GET localhost:8080/api/v1/attach/public/df7cd0bd-649d-4c49-88e0-c6c6bb6bbecf/general
+###  3. Download Attach (Download)
+GET localhost:8080/api/v1/attach/public/download/df7cd0bd-649d-4c49-88e0-c6c6bb6bbecf
+###  4. Attach pagination (ADMIN)
+GET localhost:8080/api/v1/attach/public/pagination?page=1&size=10
+###  5. Delete Attach (delete from db and system) (ADMIN)
+DELETE localhost:8080/api/v1/attach/public/df7cd0bd-649d-4c49-88e0-c6c6bb6bbecf
