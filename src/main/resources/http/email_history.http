@@ -1,0 +1,17 @@
+### 1. Get email pagination (ADMIN)
+GET localhost:8080/api/v1/emailHistory/pagination?page=1&size=10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+###2. Get Email pagination by email
+GET localhost:8080/api/v1/emailHistory/paginationByEmail?email=runnerpro1990@gmail.com&page=1&size10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIyNzMyODYsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMzU5Njg2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.q-Er35nDCMjtIFB3-QuHRVjOYbRv4Jf-6SpRGVo56dJV8g6mlv5cPa_UweTMuC-_uYSsPwpJQDJpKCYUzpIJqw
+
+###  3. filter (email,created_date) + with pagination
+POST localhost:8080/api/v1/emailHistory/filterPagination?page=1&size=10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIyNzMyODYsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMzU5Njg2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.q-Er35nDCMjtIFB3-QuHRVjOYbRv4Jf-6SpRGVo56dJV8g6mlv5cPa_UweTMuC-_uYSsPwpJQDJpKCYUzpIJqw
+
+{
+  "email": "runnerpro1990@gmail.com",
+  "fromDate" : "2023-08-10",
+  "toDate": "2023-08-18"
+}
