@@ -1,0 +1,17 @@
+###  1. Create Tag
+POST localhost:8080/api/v1/tag/public
+Content-Type: application/json
+
+{
+  "name": "best java lessons"
+}
+###      2. Update Tag (ADMIN)
+PUT localhost:8080/api/v1/tag/927f482e-8b6d-4f87-b0ba-e9785aa56051?name=tag test
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIyNzMyODYsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMzU5Njg2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.q-Er35nDCMjtIFB3-QuHRVjOYbRv4Jf-6SpRGVo56dJV8g6mlv5cPa_UweTMuC-_uYSsPwpJQDJpKCYUzpIJqw
+
+###      3. Delete Tag (ADMIN)
+DELETE localhost:8080/api/v1/tag/927f482e-8b6d-4f87-b0ba-e9785aa56051
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIyNzMyODYsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMzU5Njg2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.q-Er35nDCMjtIFB3-QuHRVjOYbRv4Jf-6SpRGVo56dJV8g6mlv5cPa_UweTMuC-_uYSsPwpJQDJpKCYUzpIJqw
+
+###     4. Tag List
+GET localhost:8080/api/v1/tag/public/getAll
