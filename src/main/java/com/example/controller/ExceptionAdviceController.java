@@ -1,9 +1,6 @@
 package com.example.controller;
 
-import com.example.exception.AppBadRequestException;
-import com.example.exception.AppMethodNotAllowedException;
-import com.example.exception.ItemNotFoundException;
-import com.example.exception.UnAuthorizedException;
+import com.example.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
@@ -22,6 +19,10 @@ public class ExceptionAdviceController {
     }
     @ExceptionHandler(UnAuthorizedException.class)
     public ResponseEntity<String>handler(UnAuthorizedException e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    @ExceptionHandler(ItemExistsException.class)
+    public ResponseEntity<String>handler(ItemExistsException e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
     @ExceptionHandler(RuntimeException.class)
