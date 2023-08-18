@@ -1,0 +1,42 @@
+###1. Create Channel (USER)
+POST localhost:8080/api/v1/channel
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIyOTA4MjYsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyMzc3MjI2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.8PBtFdYtMHFlgj7adRHGFbYhTdr1pNxNVXjOJMkkE40YlOgY-enBBLsK7faZMnsxGqcaU5L4K6jtSstbZ3zmoQ
+
+{
+"name": "my first channel",
+  "photoId": "bfc15cb2-a05c-4950-bf2b-c63068256534",
+  "description": "my channel is the best!",
+  "bannerId": "5df3cecb-7668-4866-9327-eb16dcbe0eff"
+}
+
+###2. Update Channel ( USER and OWNER)
+PUT localhost:8080/api/v1/channel/b753ca0b-6990-4a5d-b16b-dfb7a396f18e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNTI2OTUsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNDM5MDk1LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.Pwg9RRxkPl9bNL7o8fsKsAwUSmEu9uRQ8n6znzC5DCmn_ny2RNZetANZKV49pX9uO-3hmaPZiP6PnWUkmW3sPQ
+
+{
+  "name": "channel is updated",
+  "description": "my channel is the best updated!"
+}
+###3. Update Channel photo ( USER and OWNER)
+PUT localhost:8080/api/v1/channel/updatePhoto/b753ca0b-6990-4a5d-b16b-dfb7a396f18e?photoId=5df3cecb-7668-4866-9327-eb16dcbe0eff
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNTI2OTUsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNDM5MDk1LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.Pwg9RRxkPl9bNL7o8fsKsAwUSmEu9uRQ8n6znzC5DCmn_ny2RNZetANZKV49pX9uO-3hmaPZiP6PnWUkmW3sPQ
+
+###4. Update Channel banner ( USER and OWNER)
+PUT localhost:8080/api/v1/channel/updateBanner/b753ca0b-6990-4a5d-b16b-dfb7a396f18e?photoId=5df3cecb-7668-4866-9327-eb16dcbe0eff
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNTI2OTUsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNDM5MDk1LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.Pwg9RRxkPl9bNL7o8fsKsAwUSmEu9uRQ8n6znzC5DCmn_ny2RNZetANZKV49pX9uO-3hmaPZiP6PnWUkmW3sPQ
+
+###5. Channel Pagination (ADMIN)
+GET localhost:8080/api/v1/channel/pagination
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNTUwOTIsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyNDQxNDkyLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.K10FF5mPGRm1RL9JdLFdzexNwPyLmkTSx-Gf3ebnOpl_hsEPMpoM9xgH7ce0I7PeO8Xa5UFyT9QNuUCa4vMPeQ
+
+###6. Get Channel By Id
+GET localhost:8080/api/v1/channel/public/getById/b753ca0b-6990-4a5d-b16b-dfb7a396f18e
+###7. Change Channel Status (ADMIN,USER and OWNER)
+PUT localhost:8080/api/v1/channel/updateStatus/d6ff6088-719f-4598-bd94-0bd9d3df5422
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNjA2NjEsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNDQ3MDYxLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.-0Osoe3y_HJzxBWGdhPRyk8kRGspstJnaWNlxprh5PxV0K2aKrFn39J6J8lHniuUFjrcIQc1Mja8ys84HDAA7g
+
+###8. User Channel List (murojat qilgan userni)
+GET localhost:8080/api/v1/channel/getAll
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIzNjA2NjEsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNDQ3MDYxLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.-0Osoe3y_HJzxBWGdhPRyk8kRGspstJnaWNlxprh5PxV0K2aKrFn39J6J8lHniuUFjrcIQc1Mja8ys84HDAA7g
