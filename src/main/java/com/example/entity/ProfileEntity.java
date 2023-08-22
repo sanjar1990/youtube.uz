@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import com.example.enums.Language;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import jakarta.persistence.*;
@@ -35,4 +36,7 @@ public class ProfileEntity extends BaseIntEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "prt_id",updatable = false,insertable = false)
     private ProfileEntity profile;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "language")
+    private Language language;
 }

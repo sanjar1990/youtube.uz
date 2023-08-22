@@ -10,11 +10,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VideoDTO {
+    private String id;
     private String  previewAttachId;
     private String title;
     private Integer categoryId;
@@ -22,10 +24,19 @@ public class VideoDTO {
     private LocalDateTime publishedDate;
     private AccessLevel status;
     private VideoType type;
-    private Integer viewCount=0;
-    private Integer sharedCount=0;
+    private Integer viewCount;
+    private Integer sharedCount;
     private String description;
     private String channelId;
-    private Integer likeCount=0;
-    private Integer dislikeCount=0;
+    private Integer likeCount;
+    private Integer dislikeCount;
+    private ChannelDTO channelDTO;
+    private AttachDTO previewAttach;
+    private AttachDTO attach;
+    private CategoryDTO category;
+    private TagDTO tag;
+    private List<TagDTO> tagDTOList;
+    private Boolean isUserLiked;
+    private Boolean isUserDisliked;
+    private ProfileDTO profile;
 }

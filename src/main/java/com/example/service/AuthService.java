@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.dto.*;
 import com.example.entity.ProfileEntity;
+import com.example.enums.Language;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import com.example.exception.AppBadRequestException;
@@ -25,14 +26,16 @@ public class AuthService {
     private AttachService attachService;
     @Value("${attach.default.photo}")
     private String defaultPhotoId;
+    @Autowired
+    private ResourceBundleService resourceBundleService;
 
 
-    public ApiResponseDTO registration(ProfileDTO dto) {
+    public ApiResponseDTO registration(ProfileDTO dto, Language language) {
         Optional<ProfileEntity> optional=profileRepository.findByEmailAndVisibleTrue(dto.getEmail());
         if(optional.isPresent()){
             ProfileEntity entity=optional.get();
             if(!entity.getStatus().equals(ProfileStatus.REGISTRATION)){
-                return new ApiResponseDTO(true,"email is already taken");
+                return new ApiResponseDTO(true, resourceBundleService.getMessage("email.already.exists",language));
             }else {
                 profileRepository.deleteById(entity.getId());
             }
@@ -73,7 +76,7 @@ public class AuthService {
 
     }
 //2. Authorization
-    public ApiResponseDTO login(AuthDTO authDTO) {
+    public ApiResponseDTO login(AuthDTO authDTO,Language language) {
         Optional<ProfileEntity> optional=profileRepository
                 .findByEmailAndPasswordAndVisibleTrue(authDTO.getEmail(), MD5Util.encode(authDTO.getPassword()));
         if(optional.isEmpty()) return new ApiResponseDTO(true, "profile not found");
@@ -89,6 +92,8 @@ public class AuthService {
         profileDTO.setEmail(entity.getEmail());
         profileDTO.setAttachUrl(attachService.getUrl(entity.getAttachId()));
         profileDTO.setJwt(JWTUtil.encode(entity.getId(),entity.getEmail()));
+        entity.setLanguage(language);
+        profileRepository.save(entity);
         return new ApiResponseDTO(false,profileDTO);
 
     }

@@ -1,0 +1,52 @@
+###     1. Create Video (USER)
+POST localhost:8080/api/v1/video?lang=uz
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI1MjczMzksImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNjEzNzM5LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.JvryoJ-4sHHQcG095CetO9XiMU2DZnsaosyxUP4oiI5OC6FP50HCDDucRyquzdddXzzx7n2EZbEOyeZz3kgCRA
+
+{
+  "title": "my video3",
+  "categoryId": 4,
+  "attachId": "84bbb09a-796c-4103-83ad-5874d321c9df",
+  "status": "PUBLIC",
+  "description": "nimadur3",
+  "channelId": "d6ff6088-719f-4598-bd94-0bd9d3df5422",
+  "tagDTOList": ["new1","java2","best3 music","tag test", "tag test1"]
+}
+
+###  2. Update Video Detail (USER and OWNER)
+PUT localhost:8080/api/v1/video/b935d8f1-d954-47e3-9237-d5ea67cf416b?lang=en
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI1MjczMzksImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNjEzNzM5LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.JvryoJ-4sHHQcG095CetO9XiMU2DZnsaosyxUP4oiI5OC6FP50HCDDucRyquzdddXzzx7n2EZbEOyeZz3kgCRA
+
+{
+ "previewAttachId": "3b714a5c-ed9c-455f-948b-6c216d0aa69b",
+  "title": "updated1",
+  "categoryId": 3,
+  "description": "updated1",
+  "tagDTOList": ["new1","java2","best3 music","test1","updated"]
+}
+
+###   3. Change Video Status (USER and OWNER)
+PUT localhost:8080/api/v1/video/updateStatus/2451d7e7-46f2-4460-9999-cf3aa21a6de9?lang=en
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI1MjczMzksImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNjEzNzM5LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.JvryoJ-4sHHQcG095CetO9XiMU2DZnsaosyxUP4oiI5OC6FP50HCDDucRyquzdddXzzx7n2EZbEOyeZz3kgCRA
+
+###   5. Get Video Pagination by CategoryId
+GET localhost:8080/api/v1/video/public/paginationByCategory/4
+###6. Search video by Title
+GET localhost:8080/api/v1/video/public/getByTitle?title=my video2
+###  // 7. Get video by tag_id with pagination
+GET localhost:8080/api/v1/video/public/getByTag/042f8ff9-87c5-4e91-a59b-1b6972da08ea
+### // 8. Get Video By id (If Status PRIVATE allow only for OWNER or ADMIN)
+GET localhost:8080/api/v1/video/public/getById/da64b01b-9575-44f0-bc9a-1754c8cc4f62
+### // 8. Get Video By id owner(If Status PRIVATE allow only for OWNER or ADMIN)
+GET localhost:8080/api/v1/video/getById/da64b01b-9575-44f0-bc9a-1754c8cc4f62
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI1NDc0NzAsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyNjMzODcwLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.NU2AHVQYgdsJzMw_oGaWKwbkt4_3kcbRgHUvkq1nYVgc8F5_Exq2pOhun5D7pnD9FmmVlsT7lF5yheYC-_fStQ
+###  9. Get Video List Pagination (ADMIN)
+GET localhost:8080/api/v1/video/
+### 10. Get Channel Video List Pagination (created_date desc)
+GET localhost:8080/api/v1/video/public/getByChannelId/d6ff6088-719f-4598-bd94-0bd9d3df5422
+
+### 10. Get Channel Video List Pagination with login (created_date desc)
+GET localhost:8080/api/v1/video/getByChannelId/d6ff6088-719f-4598-bd94-0bd9d3df5422
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI2MDI0ODAsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyNjg4ODgwLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.xlGsTuWjZ0BhH09ebbQuwuu_u2WrgTdUDLJagdMZCbtKMtQ3cw65cBiKN0d5v4w2Qv-jvt1G3HYIlfCOkDPCrA

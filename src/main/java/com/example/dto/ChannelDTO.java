@@ -15,4 +15,5 @@ public class ChannelDTO extends BaseStringDTO{
     private String description;
     private String bannerId;
     private Integer profileId;
+    private AttachDTO photo;
 }

@@ -2,6 +2,8 @@ package com.example.controller;
 import com.example.dto.ApiResponseDTO;
 import com.example.dto.AttachDTO;
 import com.example.service.AttachService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.PageImpl;
@@ -13,11 +15,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/v1/attach")
+@Tag(name = "Attach", description = "Attach api list.")
 public class AttachController {
     @Autowired
     private AttachService attachService;
 //    1. Create Attach (upload)
     @PostMapping("/public/upload")
+    @Operation(summary = "upload photo", description = "This api used for uploading attaches ...")
     public ResponseEntity<AttachDTO>upload(@RequestParam("file")MultipartFile file){
         return ResponseEntity.ok(attachService.upload(file));
     }

@@ -1,5 +1,5 @@
 ### 1. Registration (with email verification)
-POST localhost:8080/api/v1/auth/registration
+POST localhost:8080/api/v1/auth/registration?lang=uz
 Content-Type: application/json
 
 {
@@ -10,11 +10,11 @@ Content-Type: application/json
 }
 
 ### 2. Authorization
-POST localhost:8080/api/v1/auth/login
+POST localhost:8080/api/v1/auth/login?lang=en
 Content-Type: application/json
 
 {
-  "email": "test@gmail.com",
+  "email": "runnerpro1990@gmail.com",
   "password": "12345"
 }
 

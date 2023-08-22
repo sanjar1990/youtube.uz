@@ -113,7 +113,7 @@ public class ChannelService {
          return dto;
     }
 
-    private ChannelEntity get(String id){
+    public ChannelEntity get(String id){
          return channelRepository
                  .findByIdAndVisibleTrue(id).orElseThrow(()->new ItemNotFoundException("channel not found"));
     }

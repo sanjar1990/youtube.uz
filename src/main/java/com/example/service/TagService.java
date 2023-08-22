@@ -7,19 +7,26 @@ import com.example.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TagService {
     @Autowired
     private TagRepository tagRepository;
     //       1. Create Tag
-    public ApiResponseDTO create(TagDTO dto) {
+    public TagDTO create(TagDTO dto) {
+        Optional<TagEntity>optional=tagRepository.findByNameAndVisibleTrue("#"+dto.getName());
+        if(optional.isPresent()){
+            TagDTO tagDTO= new TagDTO();
+            tagDTO.setId(optional.get().getId());
+            return tagDTO;
+        }
         TagEntity entity=new TagEntity();
-        entity.setName(dto.getName());
+        entity.setName("#"+dto.getName());
         tagRepository.save(entity);
         dto.setId(entity.getId());
         dto.setCreatedDate(entity.getCreatedDate());
-        return new ApiResponseDTO(false,dto);
+        return dto;
     }
     //      2. Update Tag (ADMIN)
     public ApiResponseDTO update(String name, String id) {

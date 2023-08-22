@@ -13,7 +13,11 @@ public class SpringSecurityUtil {
     }
     public static ProfileEntity getProfileEntity(){
         Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
-        CustomUserDetails customUserDetails=(CustomUserDetails) authentication.getPrincipal();
-        return customUserDetails.getProfile();
+          if(authentication.getPrincipal().equals("anonymousUser")){
+              return null;
+          }
+            CustomUserDetails customUserDetails=(CustomUserDetails) authentication.getPrincipal();
+
+            return customUserDetails.getProfile();
     }
 }

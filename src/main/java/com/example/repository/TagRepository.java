@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface TagRepository extends CrudRepository<TagEntity,String > {
     Optional<TagEntity> findByIdAndVisibleTrue(String id);
-
     List<TagEntity> findAllByVisibleTrue();
+    Optional<TagEntity>findByNameAndVisibleTrue(String name);
 }

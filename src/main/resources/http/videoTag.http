@@ -1,0 +1,12 @@
+###  2. Delete tag from vide (USER and OWNER)
+DELETE localhost:8080/api/v1/videoTag?lang=ru
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI0NjI5NTYsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNTQ5MzU2LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.d9lpZtk9RdU0Ywia4aPhcqC7__UgkGMZeP25Xy5XKlFIXM1eisN92MFiOkfAh3vjjpPtZpdz-dgJr2pE0TCg2g
+
+{
+  "videoId": "499b930f-49d5-4049-81f7-0c4450a140cb",
+  "tagId": "042f8ff9-87c5-4e91-a59b-1b6972da08ea"
+}
+
+### 3. Get video Tag List by videoId
+GET localhost:8080/api/v1/videoTag/public/499b930f-49d5-4049-81f7-0c4450a140cb

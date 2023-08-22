@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -31,8 +33,10 @@ public class VideoEntity extends BaseStringEntity{
     private AttachEntity attach;
     @Column(name = "published_date")
     private LocalDateTime publishedDate;
+    @Enumerated(EnumType.STRING)
     @Column
     private AccessLevel status;
+    @Enumerated(EnumType.STRING)
     @Column
     private VideoType type;
     @Column(name = "view_count")
@@ -50,6 +54,13 @@ public class VideoEntity extends BaseStringEntity{
     private Integer likeCount=0;
     @Column(name = "dislike_count")
     private Integer dislikeCount=0;
+    @Column(name = "profile_id")
+    private Integer profileId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "profile_id",insertable = false,updatable = false)
+    private ProfileEntity profile;
+    @OneToMany(mappedBy = "video")
+    List<VideoTagEntity> videoTagEntityList;
 //    view_count -> Okala view_count buyerda ham bo'lsin. Alohida Table ham bo'lsin.
 //            category_id -> bitta video bitta category bo'lsin.
 }

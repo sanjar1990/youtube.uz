@@ -22,7 +22,7 @@ public class TagController {
 
 
     @PostMapping("/public")
-    public ResponseEntity<ApiResponseDTO> create(@Valid @RequestBody TagDTO dto){
+    public ResponseEntity<TagDTO> create(@Valid @RequestBody TagDTO dto){
         return ResponseEntity.ok(tagService.create(dto));
     }
     //      2. Update Tag (ADMIN)
