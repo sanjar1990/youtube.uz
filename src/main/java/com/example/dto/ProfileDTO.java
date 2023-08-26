@@ -27,5 +27,6 @@ public class ProfileDTO {
     private String attachId;
     private String attachUrl;
     private String jwt;
+    private AttachDTO attach;
 
 }

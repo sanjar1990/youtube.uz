@@ -67,4 +67,6 @@ public interface VideoRepository extends CrudRepository<VideoEntity,String > {
             "inner join v.attach as a where v.channelId=:channelId and v.status in (:list) and v.visible=true")
     Page<VideoPlaylistInfoMapperI>getByChannelId(@Param("channelId") String channelId,
                                                  @Param("list") List<AccessLevel> statusList,Pageable pageable );
+
+    Boolean existsByIdAndStatusAndVisibleTrue(String videoId,AccessLevel status);
 }

@@ -1,16 +1,16 @@
 ###     1. Create Video (USER)
 POST localhost:8080/api/v1/video?lang=uz
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI1MjczMzksImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkyNjEzNzM5LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.JvryoJ-4sHHQcG095CetO9XiMU2DZnsaosyxUP4oiI5OC6FP50HCDDucRyquzdddXzzx7n2EZbEOyeZz3kgCRA
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI3OTQ0NzIsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkyODgwODcyLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.P5OdR3FZ5Xubgz-DG0doXKt4tAjafidDytvWaymCNxVaE7j77aaI63AHIm7hJS_PRy-mizGalaV6HyWikhgOgw
 
 {
-  "title": "my video3",
+  "title": "eshmat video3",
   "categoryId": 4,
   "attachId": "84bbb09a-796c-4103-83ad-5874d321c9df",
-  "status": "PUBLIC",
-  "description": "nimadur3",
-  "channelId": "d6ff6088-719f-4598-bd94-0bd9d3df5422",
-  "tagDTOList": ["new1","java2","best3 music","tag test", "tag test1"]
+  "status": "PRIVATE",
+  "description": "eshmat 3",
+  "channelId": "ac232407-6ece-4c50-a3ef-91806bb3a1d8",
+  "tagDTOList": ["new1","java2","best3 music"]
 }
 
 ###  2. Update Video Detail (USER and OWNER)

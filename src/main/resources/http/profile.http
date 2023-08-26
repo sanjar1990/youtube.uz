@@ -23,13 +23,12 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlb
 ###   6. Create Profile (ADMIN)
 POST localhost:8080/api/v1/profile/createProfile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTIxODU2OTgsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyMjcyMDk4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.9vr9BMEgrbmiNPnqdQlrbtdrmfv000RoZYJkxT2jyMnMDooQZZW1o-ZLX0PuWNGos8xf9SitqjGdYY25puk7CA
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI3ODA3ODcsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkyODY3MTg3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.KMCjZ3yVPcp1V7NERRRHPxK2URaHNpVbpvGAEIVks7GgyB9zt8OR0pWisNWMRSgo7lZCy9_-E0LgTGmnVNOlHw
 
 {
-  "name": "Teshmat",
-  "surname": "Toshmatov",
-  "email": "test@gmail.com",
+  "name": "vali",
+  "surname": "Valiyev",
+  "email": "vali@gmail.com",
   "password": "12345",
-  "role": "ROLE_MODERATOR",
-  "attachId":"bfc15cb2-a05c-4950-bf2b-c63068256534"
+  "role": "ROLE_MODERATOR"
 }

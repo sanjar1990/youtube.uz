@@ -32,11 +32,11 @@ public class ExceptionAdviceController {
     }
     @ExceptionHandler(AppMethodNotAllowedException.class)
     private ResponseEntity<String> handler(AppMethodNotAllowedException e) {
-        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).build();
+        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(e.getMessage());
     }
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<String> handler(AccessDeniedException e) {
-        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).build();
+        return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).body(e.getMessage());
     }
 
 }

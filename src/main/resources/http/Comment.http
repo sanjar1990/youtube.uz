@@ -1,0 +1,39 @@
+###  1. Crate Comment (USER)
+POST localhost:8080/api/v1/comment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwNDY4NjgsImlkIjo3LCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiZXhwIjoxNjkzMTMzMjY4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.U6k_XHg1ZY0uK9UzPl7in3YuR95tqt1x-j2K4gDIxmwhPpBszLwy_tC7zORXXYMAu-eKeCBhOnETgDIJNs7mRA
+
+{
+  "videoId": "da64b01b-9575-44f0-bc9a-1754c8cc4f62",
+  "content": "Teshmat comment 3"
+
+}
+
+### 2. Update Comment (USER AND OWNER)
+PUT localhost:8080/api/v1/comment/749f3129-8b7a-40de-a243-6a921085ecb1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwMzk2ODcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzMTI2MDg3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.wCviJmj2mZjQQ4ky8TzaK8dhE85axMtFF4lDqRUtp95ervHQsnMaLQQOvS8l8Ur6koWJ_yvcRTj_YL2aEje1ww
+
+{
+  "content": "Comment updated "
+}
+###  3. Delete Comment (USER AND OWNER, ADMIN)
+DELETE localhost:8080/api/v1/comment/749f3129-8b7a-40de-a243-6a921085ecb1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwMzk2ODcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzMTI2MDg3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.wCviJmj2mZjQQ4ky8TzaK8dhE85axMtFF4lDqRUtp95ervHQsnMaLQQOvS8l8Ur6koWJ_yvcRTj_YL2aEje1ww
+### 4. Comment List Pagination (ADMIN)
+GET localhost:8080/api/v1/comment/pagination?page=1&size=10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwNDIyNTcsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkzMTI4NjU3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.6iDfUEcoETM2yoN2EETS7Zl7kwvth7tN5JwRpDtXKSQLoM0-efWfFkBxygJDp1E5XT-axy0NcixJkHSf-NYh5Q
+
+###5. Comment List By profileId(ADMIN)
+GET localhost:8080/api/v1/comment/paginationByProfileId/11
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwNDIyNTcsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkzMTI4NjU3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.6iDfUEcoETM2yoN2EETS7Zl7kwvth7tN5JwRpDtXKSQLoM0-efWfFkBxygJDp1E5XT-axy0NcixJkHSf-NYh5Q
+
+### 6. Comment List By Profile (murojat qilgan odamning comment lari) (USER AND OWNER)
+GET localhost:8080/api/v1/comment/commentList
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMwMzk2ODcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzMTI2MDg3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.wCviJmj2mZjQQ4ky8TzaK8dhE85axMtFF4lDqRUtp95ervHQsnMaLQQOvS8l8Ur6koWJ_yvcRTj_YL2aEje1ww
+
+### 7. Comment List by videoId
+GET localhost:8080/api/v1/comment/public/byVideoId/1f31e75c-85b4-4cc2-8288-b87f77718695
+
+###  8. Get Comment Replied Comment by comment Id (Commentga yozilgan commentlar)
+GET localhost:8080/api/v1/comment/public/getReply/749f3129-8b7a-40de-a243-6a921085ecb1

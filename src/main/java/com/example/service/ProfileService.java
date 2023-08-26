@@ -127,7 +127,7 @@ public class ProfileService {
         entity.setEmail(dto.getEmail());
         entity.setPassword(MD5Util.encode(dto.getPassword()));
         if(dto.getAttachId()==null || dto.getAttachId().isBlank()){
-            entity.setAttachId(defaultPhotoId);
+            entity.setAttachId("75b02981-915d-4446-994e-e3ecbc04298f");
         }else {
             entity.setAttachId(dto.getAttachId());
         }
