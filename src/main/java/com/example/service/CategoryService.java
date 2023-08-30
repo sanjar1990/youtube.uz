@@ -7,6 +7,8 @@ import com.example.exception.ItemExistsException;
 import com.example.exception.ItemNotFoundException;
 import com.example.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +29,7 @@ public class CategoryService {
         return new ApiResponseDTO(false,dto);
     }
     //    2. Update Category (ADMIN)
+    @Cacheable(value = "category",key = "#id")
     public ApiResponseDTO update(String name, Integer id) {
         nameExists(name);
         CategoryEntity entity=get(id);
@@ -36,6 +39,7 @@ public class CategoryService {
     }
 
     //    3. Delete Category (ADMIN)
+    @CacheEvict(value = "category",key = "#id")
     public ApiResponseDTO delete(Integer id) {
         CategoryEntity entity=get(id);
         entity.setVisible(false);
@@ -43,6 +47,7 @@ public class CategoryService {
         return new ApiResponseDTO(false,"deleted");
     }
     //    4. Category List
+    @Cacheable(cacheNames ="category")
     public List<CategoryDTO> getAll() {
         List<CategoryEntity> entityList=categoryRepository.findAllByVisibleTrue();
         return entityList.stream().map(this::toDto).toList();
