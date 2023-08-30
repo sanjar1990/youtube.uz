@@ -1,0 +1,15 @@
+### //1. Create Comment like
+POST localhost:8080/api/v1/commentLike/like/749f3129-8b7a-40de-a243-6a921085ecb1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+### //1. Create Comment dislike
+POST localhost:8080/api/v1/commentLike/dislike/749f3129-8b7a-40de-a243-6a921085ecb1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+###   3. User Liked Comment List (order by created_date desc) (USER)
+GET localhost:8080/api/v1/commentLike/ownLikeList
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+###   3. User Liked Comment List (order by created_date desc) (USER)
+GET localhost:8080/api/v1/commentLike/userLikeList/11
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzOTc2MDAsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkzNDg0MDAwLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.236Cc5JVJ6l0bPKGQ-6g2tBQLBejI_wBDjVBAcmYMxJ_m6tyjCpz9BGHx6YvbjjVJcjeeM0YayvU7iEighRiWg
+
