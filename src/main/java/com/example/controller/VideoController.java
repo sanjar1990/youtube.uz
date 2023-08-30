@@ -28,9 +28,8 @@ public class VideoController {
     @PreAuthorize("hasRole('USER')")
     @PostMapping("")
     @Operation(summary = "create video", description = "This api used for creating video ...")
-    public ResponseEntity<VideoDTO>create(@Valid @RequestBody VideoCreateDTO dto,
-                                          @RequestParam("lang")Language language){
-        return ResponseEntity.ok(videoService.create(dto,language));
+    public ResponseEntity<VideoDTO>create(@Valid @RequestBody VideoCreateDTO dto){
+        return ResponseEntity.ok(videoService.create(dto));
     }
     // 2. Update Video Detail (USER and OWNER)
     @PreAuthorize("hasRole('USER')")

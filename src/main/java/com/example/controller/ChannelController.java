@@ -2,7 +2,6 @@ package com.example.controller;
 
 import com.example.dto.ApiResponseDTO;
 import com.example.dto.ChannelDTO;
-import com.example.enums.ChannelStatus;
 import com.example.service.ChannelService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

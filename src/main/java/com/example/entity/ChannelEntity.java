@@ -1,5 +1,5 @@
 package com.example.entity;
-import com.example.enums.ChannelStatus;
+import com.example.enums.ActiveBlockStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ public class ChannelEntity extends BaseStringEntity {
     private String description;
     @Enumerated(EnumType.STRING)
     @Column
-    private ChannelStatus status;
+    private ActiveBlockStatus status;
     @Column(name = "banner_id")
     private String bannerId;
     @OneToOne(fetch = FetchType.LAZY)

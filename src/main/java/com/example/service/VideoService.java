@@ -39,7 +39,7 @@ public class VideoService {
     @Autowired
     private ChannelService channelService;
 
-    public VideoDTO create(VideoCreateDTO dto, Language language) {
+    public VideoDTO create(VideoCreateDTO dto) {
         Integer prtId=SpringSecurityUtil.getProfileId();
         VideoEntity entity=new VideoEntity();
         entity.setTitle(dto.getTitle());

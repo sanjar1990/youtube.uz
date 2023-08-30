@@ -1,12 +1,12 @@
 ###1. Create Channel (USER)
 POST localhost:8080/api/v1/channel
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTI3ODIzNjgsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkyODY4NzY4LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.dTN3Z9mtTsJ1nlbUHly21UYnguaNRRHQ4N04cXs9Eb3EAOY5zoxA6prMTFpFGIliZCaCtvRYx05en7oTo4B_mw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
 
 {
-"name": "eshmat  channel",
+"name": "eshmat  channel2",
   "photoId": "bfc15cb2-a05c-4950-bf2b-c63068256534",
-  "description": "eshmat channel is the best!",
+  "description": "eshmat channel is the best2!",
   "bannerId": "5df3cecb-7668-4866-9327-eb16dcbe0eff"
 }
 

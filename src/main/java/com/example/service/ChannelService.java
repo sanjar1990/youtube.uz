@@ -4,7 +4,7 @@ import com.example.dto.ApiResponseDTO;
 import com.example.dto.ChannelDTO;
 import com.example.entity.ChannelEntity;
 import com.example.entity.ProfileEntity;
-import com.example.enums.ChannelStatus;
+import com.example.enums.ActiveBlockStatus;
 import com.example.enums.ProfileRole;
 import com.example.exception.AppBadRequestException;
 import com.example.exception.ItemNotFoundException;
@@ -28,7 +28,7 @@ public class ChannelService {
          entity.setDescription(dto.getDescription());
          entity.setPhotoId(dto.getPhotoId());
          entity.setBannerId(dto.getBannerId());
-         entity.setStatus(ChannelStatus.ACTIVE);
+         entity.setStatus(ActiveBlockStatus.ACTIVE);
          entity.setProfileId(prtId);
          channelRepository.save(entity);
          dto.setId(entity.getId());
@@ -85,10 +85,10 @@ public class ChannelService {
         ChannelEntity channel=get(channelId);
         if(channel.getProfileId().equals(profile.getId())
                 || profile.getRole().equals(ProfileRole.ROLE_ADMIN)){
-            if(channel.getStatus().equals(ChannelStatus.ACTIVE)){
-                channel.setStatus(ChannelStatus.BLOCK);
+            if(channel.getStatus().equals(ActiveBlockStatus.ACTIVE)){
+                channel.setStatus(ActiveBlockStatus.BLOCK);
             }else {
-                channel.setStatus(ChannelStatus.ACTIVE);
+                channel.setStatus(ActiveBlockStatus.ACTIVE);
             }
             channelRepository.save(channel);
             return new ApiResponseDTO(false,toDto(channel));

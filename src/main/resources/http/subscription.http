@@ -1,0 +1,29 @@
+### 1. Create User Subscription (USER)
+POST localhost:8080/api/v1/subscription
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+{
+  "channelId": "06590daa-5d0a-4b1b-8c41-a958bdb8022c"
+}
+### 2. Change Subscription Status (USER)
+PUT localhost:8080/api/v1/subscription/changeStatus?channelId=d6ff6088-719f-4598-bd94-0bd9d3df5422
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+###  3. Change Subscription Notification type (USER)
+PUT localhost:8080/api/v1/subscription/changeNotificationType
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+{
+  "channelId": "d6ff6088-719f-4598-bd94-0bd9d3df5422",
+  "notificationType": "UNSUBSCRIBE"
+}
+### 4. Get User Subscription List (only Active) (murojat qilgan user)
+GET localhost:8080/api/v1/subscription/getSubList
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzNzg5NDcsImlkIjoxMSwiZW1haWwiOiJlc2htYXRAZ21haWwuY29tIiwiZXhwIjoxNjkzNDY1MzQ3LCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.y5sQbVMyg-rHSKQsdwxhkJtAmqHm__fCTdA4bFgyA4dHJ5LExi4vnVrbb70rHCoVrZAfN81a432OxA3FvqMw7g
+
+### 5. Get User Subscription List By UserId (only Active) (ADMIN)
+GET localhost:8080/api/v1/subscription/getUserSubList/11
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzODQ4NDIsImlkIjo0LCJlbWFpbCI6InJ1bm5lcnBybzE5OTBAZ21haWwuY29tIiwiZXhwIjoxNjkzNDcxMjQyLCJpc3MiOiJ5b3V0dWJlIGJ5IFNhbmphciJ9.jMfGIzgDSV4CpLgPSCv5X9XfwgJrCzyo7z6iN9rKSQIEZnFVOjwyyqHpd5frAFbmt3yhPVQ8S1F9EDIfXqIFhg
+
